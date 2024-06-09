@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "What's Next.js and Why Should I Use It?",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis nec, adipiscing id, risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    },
+    {
+      "id": 2,
+      "title": "How to Optimize Your Website for SEO",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis nec, adipiscing id, risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    },
+    {
+      "id": 3,
+      "title": "The Future of Web Development: Trends and Predictions",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis nec, adipiscing id, risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    },
+    {
+      "id": 4,
+      "title": "How to Build a High-Performance Website",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis nec, adipiscing id, risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    },
+    {
+      "id": 5,
+      "title": "The Importance of Accessibility in Web Design",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis nec, adipiscing id, risus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    }
+  ]
