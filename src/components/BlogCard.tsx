@@ -20,7 +20,7 @@ import Link from "next/link";
 import { titleToSlug } from "@/lib/titleToSlug";
 
 interface BlogCardProps {
-  datas : { id: number, title: string, body: string }
+  datas : { _id: string, title: string, body: string }
 }
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -46,7 +46,7 @@ export default function BlogCard({ datas }: BlogCardProps) {
   };
 
   return (
-    <Link href={`/posts/${datas.id}`}>
+    <Link href={`/posts/${datas._id}`}>
       <Card sx={{ maxWidth: 345 }}>
         <CardHeader
           avatar={

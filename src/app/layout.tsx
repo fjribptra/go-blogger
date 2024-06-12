@@ -10,6 +10,8 @@ import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const dynamic = "force-dynamic"; 
+
 export const metadata: Metadata = {
   title: "Go Blogger By fjribptra",
   description: "This is a blog web app created by fjribptra",
