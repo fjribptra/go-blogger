@@ -18,10 +18,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Link from "next/link";
 import { titleToSlug } from "@/lib/titleToSlug";
-import { EditNote } from "@mui/icons-material";
+import { Delete, EditNote } from "@mui/icons-material";
+import { isoDateToStringDate } from "@/lib/isoDateToStringDate";
 
 interface BlogCardProps {
-  datas : { _id: string, title: string, body: string }
+  datas : { _id: string, title: string, body: string, createdAt: string, updatedAt: string }
 }
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -60,7 +61,7 @@ export default function BlogCard({ datas }: BlogCardProps) {
             </IconButton>
           }
           title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          subheader={`${isoDateToStringDate(datas.updatedAt)}`}
         />
          <Link href={`/posts/${datas._id}`}>
         <CardMedia component="img" height="194" image="/images/siapa diri lo.png" alt="Paella dish" />
@@ -78,10 +79,13 @@ export default function BlogCard({ datas }: BlogCardProps) {
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
-          <IconButton aria-label="share">
+          <IconButton aria-label="edit">
             <Link href={`/posts/edit/${datas._id}`}>
             <EditNote/>
             </Link>
+          </IconButton>
+          <IconButton aria-label="delete">
+            <Delete/>
           </IconButton>
           {/* <ExpandMore
           expand={expanded}
