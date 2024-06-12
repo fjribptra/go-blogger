@@ -15,5 +15,5 @@ export async function PUT(request: NextRequest, {params}: {params: { id: string 
     const {title, body} = await request.json()
     await connection()
     await Blog.findByIdAndUpdate(id, {title, body})
-    return new NextResponse("Blog Updated", { status: 200 })
+    return new NextResponse(JSON.stringify({message: "Blog Updated"}), { status: 200 })
 }

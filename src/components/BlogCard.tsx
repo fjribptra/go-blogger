@@ -18,6 +18,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Link from "next/link";
 import { titleToSlug } from "@/lib/titleToSlug";
+import { EditNote } from "@mui/icons-material";
 
 interface BlogCardProps {
   datas : { _id: string, title: string, body: string }
@@ -46,7 +47,6 @@ export default function BlogCard({ datas }: BlogCardProps) {
   };
 
   return (
-    <Link href={`/posts/${datas._id}`}>
       <Card sx={{ maxWidth: 345 }}>
         <CardHeader
           avatar={
@@ -62,7 +62,9 @@ export default function BlogCard({ datas }: BlogCardProps) {
           title="Shrimp and Chorizo Paella"
           subheader="September 14, 2016"
         />
+         <Link href={`/posts/${datas._id}`}>
         <CardMedia component="img" height="194" image="/images/siapa diri lo.png" alt="Paella dish" />
+        </Link>
         <CardContent>
           <h1>{datas.title}</h1>
           <Typography variant="body2" color="text.secondary">
@@ -75,6 +77,11 @@ export default function BlogCard({ datas }: BlogCardProps) {
           </IconButton>
           <IconButton aria-label="share">
             <ShareIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <Link href={`/posts/edit/${datas._id}`}>
+            <EditNote/>
+            </Link>
           </IconButton>
           {/* <ExpandMore
           expand={expanded}
@@ -115,6 +122,5 @@ export default function BlogCard({ datas }: BlogCardProps) {
         </CardContent>
       </Collapse> */}
       </Card>
-    </Link>
   );
 }

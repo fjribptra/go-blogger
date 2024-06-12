@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export async function getAllBlogs() {
     try {
       const res = await fetch(`${process.env.API_ENDPOINT}/api/blogs`, {
@@ -19,4 +21,14 @@ export async function getBlogById(id: string) {
     })
     const data = await res.json()
     return data
+}
+
+export async function addBlog({title, body}: {title: string, body:string}) {
+  const res = await fetch(`/api/blogs`, 
+    {method: "POST",
+      body: JSON.stringify({title: title,body: body}),
+    })
+
+    const data = await res.json()
+    console.log(data)
 }
