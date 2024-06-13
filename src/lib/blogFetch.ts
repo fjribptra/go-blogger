@@ -15,7 +15,8 @@ export async function getAllBlogs() {
 
 export async function getBlogById(id: string) {
     const res = await fetch(`${process.env.API_ENDPOINT}/api/blogs/${id}`, {
-        method: 'GET'
+        method: 'GET',
+        cache: "no-store",
     })
     const data = await res.json()
     return data
@@ -38,4 +39,19 @@ export async function deleteBlog(id: string) {
 
   const data = await res.json()
   console.log(data)
+}
+
+export async function getBlogByIdForEditForm(id: string) {
+  const res = await fetch(`/api/blogs/${id}`, {
+    method: 'GET'
+  })
+  return res.json()
+}
+
+export async function updateBlogById(id: string, {title, body}: {title: string, body: string}) {
+  const res = await fetch(`/api/blogs/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({title, body})
+  })
+  return res.json()
 }
