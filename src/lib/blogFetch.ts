@@ -1,5 +1,3 @@
-import { redirect } from "next/navigation";
-
 export async function getAllBlogs() {
     try {
       const res = await fetch(`${process.env.API_ENDPOINT}/api/blogs`, {
@@ -31,4 +29,13 @@ export async function addBlog({title, body}: {title: string, body:string}) {
 
     const data = await res.json()
     console.log(data)
+}
+
+export async function deleteBlog(id: string) {
+  const res = await fetch(`/api/blogs?id=${id}`, {
+    method: 'DELETE',
+  })
+
+  const data = await res.json()
+  console.log(data)
 }

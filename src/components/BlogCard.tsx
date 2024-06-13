@@ -20,6 +20,8 @@ import Link from "next/link";
 import { titleToSlug } from "@/lib/titleToSlug";
 import { Delete, EditNote } from "@mui/icons-material";
 import { isoDateToStringDate } from "@/lib/isoDateToStringDate";
+import { deleteBlog } from "@/lib/blogFetch";
+import { useRouter } from "next/navigation";
 
 interface BlogCardProps {
   datas : { _id: string, title: string, body: string, createdAt: string, updatedAt: string }
@@ -42,10 +44,19 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function BlogCard({ datas }: BlogCardProps) {
   const [expanded, setExpanded] = React.useState(false);
+  const router = useRouter()
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+
+  function handleDeleteButton(id: string) {
+    const confirm: boolean = window.confirm("Are you sure to delete this blog?")
+    if(!confirm) return
+    deleteBlog(id)
+    router.refresh()
+    alert("Blog deleted")
+  }
 
   return (
       <Card sx={{ maxWidth: 345 }}>
@@ -85,7 +96,7 @@ export default function BlogCard({ datas }: BlogCardProps) {
             </Link>
           </IconButton>
           <IconButton aria-label="delete">
-            <Delete/>
+            <Delete onClick={()=> handleDeleteButton(datas._id)}/>
           </IconButton>
           {/* <ExpandMore
           expand={expanded}
