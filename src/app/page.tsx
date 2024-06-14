@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <div>
-        
+        <h1>Go Blogger</h1>
       </div>
     </main>
   );
